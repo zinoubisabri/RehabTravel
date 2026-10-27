@@ -1,0 +1,50 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- الإنترنت -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- المايكروفون — المساعد الصوتي -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- الموقع — اقتراح أقرب مطار/مدينة -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- الإشعارات (أندرويد 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <application
+        android:label="رحاب المسافرين"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- يظهر الثيم الافتتاحي حتى يجهز Flutter -->
+            <meta-data
+                android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- لا تحذف: مطلوب من محرك Flutter -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2"/>
+        <!-- قناة إشعارات FCM الافتراضية — تُنشأ أيضاً من التطبيق عند الإقلاع -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="rt_alerts"/>
+    </application>
+    <!-- مطلوب لمعالجة النصوص/الاستعلامات في أندرويد 11+ -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+</manifest>

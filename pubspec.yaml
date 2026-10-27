@@ -1,0 +1,73 @@
+name: rehab_travel_app
+description: "Rehab Travel — رحاب المسافرين: طيران، فنادق، عمرة، شرائح eSIM"
+publish_to: "none"
+version: 2.11.1+30
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  http: ^1.2.0
+  shared_preferences: ^2.2.2
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  # إشعارات نظام محلية بالصوت عند وصول إشعار جديد من لوحة الإدارة
+  flutter_local_notifications: ^17.2.4
+  # إشعارات Firebase — تصل والتطبيق في الخلفية أو مغلق تماماً
+  firebase_core: ^3.6.0
+  firebase_messaging: ^15.1.3
+  url_launcher: ^6.2.5
+  # اختيار صورة الجواز من الاستوديو أو الكاميرا لقراءة MRZ
+  image_picker: ^1.1.2
+  # المساعد الصوتي: تحويل الكلام العربي إلى نص على الجهاز
+  speech_to_text: ^7.0.0
+  # طلب أذونات النظام (مايكروفون، موقع، إشعارات)
+  permission_handler: ^11.3.1
+  # طباعة الفاوتشرات والتذاكر: نلتقط البطاقة كصورة ونضعها في PDF
+  pdf: ^3.11.1
+  printing: ^5.13.4
+  # الدخول الاجتماعي: Google (Android) / Apple (iOS)
+  google_sign_in: ^6.2.2
+  sign_in_with_apple: ^6.1.3
+  # ملاحظة: حزمة intl تأتي تلقائياً مع flutter_localizations بالنسخة المتوافقة مع إصدار Flutter لديك —
+  # لا تُثبِّتها يدوياً هنا حتى لا يحدث تعارض نسخ عند ترقية Flutter SDK.
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1
+
+# أيقونة التطبيق من شعار الشركة — بعد `flutter create .` شغّل مرة واحدة:
+#   dart run flutter_launcher_icons
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/icon/app_icon.png
+  adaptive_icon_background: "#033C67"
+  adaptive_icon_foreground: assets/icon/app_icon_foreground.png
+  remove_alpha_ios: true
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/splash_logo.png
+    - assets/brand_logo.png
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Cairo-ExtraBold.ttf
+          weight: 800
