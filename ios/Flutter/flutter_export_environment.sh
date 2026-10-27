@@ -1,12 +1,13 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/tmp/flutter"
-export "FLUTTER_APPLICATION_PATH=/mnt/agents/output/RehabTravel/mobile/rehab_travel_app"
+export "FLUTTER_ROOT=C:\src\flutter"
+export "FLUTTER_APPLICATION_PATH=C:\rehab_travel_app"
+export "FLUTTER_FRAMEWORK_SWIFT_PACKAGE_PATH=C:\rehab_travel_app\ios\Flutter\ephemeral\Packages\.packages\FlutterFramework"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
-export "FLUTTER_TARGET=lib/main.dart"
+export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
-export "FLUTTER_BUILD_NAME=2.2.1"
-export "FLUTTER_BUILD_NUMBER=17"
+export "FLUTTER_BUILD_NAME=2.11.1"
+export "FLUTTER_BUILD_NUMBER=30"
 export "DART_OBFUSCATION=false"
 export "TRACK_WIDGET_CREATION=true"
 export "TREE_SHAKE_ICONS=false"
